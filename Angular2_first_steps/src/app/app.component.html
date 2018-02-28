@@ -1,4 +1,5 @@
-<h1>Application says what?</h1>
-<ul>
-  <li *ngFor="let value of apiValues">{{value}}</li>
-</ul>
+<nav>
+  <a routerLink="/movies" routerLinkActive="active">Movies</a>
+  <a routerLink="/directors" routerLinkActive="active">Directors</a>
+</nav>
+<router-outlet></router-outlet>
