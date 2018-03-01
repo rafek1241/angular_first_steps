@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace angular.dao.Models
 {
-    public class Director
+    public class Actor
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
         public string Surname { get; set; }
-        public ICollection<Movie> Movies { get; set; }
-
+        public DateTime BirthDate { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }
