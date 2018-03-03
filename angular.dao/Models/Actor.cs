@@ -8,9 +8,10 @@ namespace angular.dao.Models
 {
     public class Actor
     {
+        public long ActorId { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public DateTime BirthDate { get; set; }
-        public virtual ICollection<Movie> Movies { get; set; }
+        public ICollection<ActorMovie> ActorMovies { get; set; }
     }
 }

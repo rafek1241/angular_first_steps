@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace angular.dao.Models
 {
-    public class Rating
+    public class ActorMovie
     {
-        public long RatingId { get; set; }
-        public float Rate { get; set; }
-        public User User { get; set; }
+        public long ActorMovieId { get; set; }
+        public Actor Actor { get; set; }
         public Movie Movie { get; set; }
     }
 }
