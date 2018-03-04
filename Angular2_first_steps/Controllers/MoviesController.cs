@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using angular.dao.Models;
 using angular.services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,41 +16,24 @@ namespace angular.web.Controllers
   {
     private IMovieService movieService;
 
-    public MoviesController(IMovieService movieService)
-    {
-      this.movieService = movieService;
-    }
+    public MoviesController(IMovieService movieService) => this.movieService = movieService;
 
-    // GET: api/<controller>
     [HttpGet]
-    public IEnumerable<string> Get()
-    {
-      return null;
-    }
+    public IEnumerable<Movie> Get() => movieService.GetMovies();
 
-    // GET api/<controller>/5
     [HttpGet("{id}")]
-    public string Get(int id)
-    {
-      return "value";
-    }
+    public Movie Get(long id) => movieService.GetMovie(id);
 
-    // POST api/<controller>
+    [HttpGet("director={directorId}")]
+    public IEnumerable<Movie> GetByDirectorId(long directorId) => movieService.GetMoviesByDirectorId(directorId);
+
     [HttpPost]
-    public void Post([FromBody]string value)
-    {
-    }
+    public HttpResponseMessage Post([FromBody]Movie value) => movieService.SetMovie(value);
 
-    // PUT api/<controller>/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody]string value)
-    {
-    }
+    public HttpResponseMessage Put([FromBody]Movie value) => movieService.PutMovie(value);
 
-    // DELETE api/<controller>/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
-    }
+    public HttpResponseMessage Delete(int id) => movieService.RemoveMovie(id);
   }
 }
