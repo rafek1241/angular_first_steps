@@ -13,8 +13,8 @@ namespace angular.services.Interfaces
         IEnumerable<Director> GetDirectors();
         Director GetDirector(long directorId);
         Director GetDirectorByMovieId(long movieId);
-        HttpResponseMessage SetDirector(Director director);
-        HttpResponseMessage PutDirector(Director director);
+        HttpResponseMessage AddDirector(Director director);
+        HttpResponseMessage UpdateDirector(Director director);
         HttpResponseMessage RemoveDirector(long directorId);
     }
 }

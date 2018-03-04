@@ -28,10 +28,10 @@ namespace angular.web.Controllers
     public IEnumerable<Movie> GetByDirectorId(long directorId) => movieService.GetMoviesByDirectorId(directorId);
 
     [HttpPost]
-    public HttpResponseMessage Post([FromBody]Movie value) => movieService.SetMovie(value);
+    public HttpResponseMessage Post([FromBody]Movie value) => movieService.AddMovie(value);
 
     [HttpPut("{id}")]
-    public HttpResponseMessage Put([FromBody]Movie value) => movieService.PutMovie(value);
+    public HttpResponseMessage Put([FromBody]Movie value) => movieService.UpdateMovie(value);
 
     [HttpDelete("{id}")]
     public HttpResponseMessage Delete(int id) => movieService.RemoveMovie(id);

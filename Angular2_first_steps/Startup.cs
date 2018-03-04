@@ -29,6 +29,7 @@ namespace Angular2_first_steps
 
       //repositories:
       services.AddScoped<IMovieService, MovieService>();
+      services.AddScoped<IDirectorService, DirectorService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

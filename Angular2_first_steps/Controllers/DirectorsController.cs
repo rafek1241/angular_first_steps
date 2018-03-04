@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net.Http;
+using angular.dao.Models;
 using angular.services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace angular.web.Controllers
 {
@@ -14,41 +11,24 @@ namespace angular.web.Controllers
   {
     private IDirectorService directorService;
 
-    public DirectorsController(IDirectorService service)
-    {
-      directorService = service;
-    }
+    public DirectorsController(IDirectorService service) => directorService = service;
 
-    // GET: api/<controller>
     [HttpGet]
-    public IEnumerable<string> Get()
-    {
-      return new string[] { "value1", "value2" };
-    }
+    public IEnumerable<Director> Get() => directorService.GetDirectors();
 
-    // GET api/<controller>/5
     [HttpGet("{id}")]
-    public string Get(int id)
-    {
-      return "value";
-    }
+    public Director Get(long id) => directorService.GetDirector(id);
 
-    // POST api/<controller>
+    [HttpGet("movie={id}")]
+    public Director GetByMovieId(long id) => directorService.GetDirectorByMovieId(id);
+
     [HttpPost]
-    public void Post([FromBody]string value)
-    {
-    }
+    public HttpResponseMessage Post([FromBody]Director value) => directorService.AddDirector(value);
 
-    // PUT api/<controller>/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody]string value)
-    {
-    }
+    public HttpResponseMessage Put([FromBody]Director value) => directorService.UpdateDirector(value);
 
-    // DELETE api/<controller>/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
-    }
+    public HttpResponseMessage Delete(long id) => directorService.RemoveDirector(id);
   }
 }

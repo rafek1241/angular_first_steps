@@ -26,12 +26,12 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage SetDirector(Director director)
+        public HttpResponseMessage AddDirector(Director director)
         {
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage PutDirector(Director director)
+        public HttpResponseMessage UpdateDirector(Director director)
         {
             throw new NotImplementedException();
         }

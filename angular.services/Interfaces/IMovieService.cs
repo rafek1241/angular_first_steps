@@ -13,8 +13,8 @@ namespace angular.services.Interfaces
         IEnumerable<Movie> GetMovies();
         IEnumerable<Movie> GetMoviesByDirectorId(long directorId);
         Movie GetMovie(long movieId);
-        HttpResponseMessage SetMovie(Movie movie);
-        HttpResponseMessage PutMovie(Movie movie);
+        HttpResponseMessage AddMovie(Movie movie);
+        HttpResponseMessage UpdateMovie(Movie movie);
         HttpResponseMessage RemoveMovie(long movieId);
 
     }

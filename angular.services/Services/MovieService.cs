@@ -26,12 +26,12 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage SetMovie(Movie movie)
+        public HttpResponseMessage AddMovie(Movie movie)
         {
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage PutMovie(Movie movie)
+        public HttpResponseMessage UpdateMovie(Movie movie)
         {
             throw new NotImplementedException();
         }
