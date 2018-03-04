@@ -15,6 +15,6 @@ namespace angular.services.Interfaces
         Director GetDirectorByMovieId(long movieId);
         HttpResponseMessage SetDirector(Director director);
         HttpResponseMessage PutDirector(Director director);
-        HttpResponseMessage RemoveDirector(Director director);
+        HttpResponseMessage RemoveDirector(long directorId);
     }
 }

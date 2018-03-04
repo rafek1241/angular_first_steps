@@ -36,7 +36,7 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage RemoveMovie(Movie movie)
+        public HttpResponseMessage RemoveMovie(long movieId)
         {
             throw new NotImplementedException();
         }

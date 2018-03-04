@@ -36,7 +36,7 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage RemoveDirector(Director director)
+        public HttpResponseMessage RemoveDirector(long directorId)
         {
             throw new NotImplementedException();
         }

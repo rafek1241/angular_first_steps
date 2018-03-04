@@ -15,7 +15,7 @@ namespace angular.services.Interfaces
         Movie GetMovie(long movieId);
         HttpResponseMessage SetMovie(Movie movie);
         HttpResponseMessage PutMovie(Movie movie);
-        HttpResponseMessage RemoveMovie(Movie movie);
+        HttpResponseMessage RemoveMovie(long movieId);
 
     }
 }
