@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\angular.dao\angular.dao.csproj" />
+    <ProjectReference Include="..\angular.services\angular.services.csproj" />
   </ItemGroup>
 
 </Project>
