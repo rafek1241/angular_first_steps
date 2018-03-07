@@ -6,14 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using angular.dao.Models;
 using angular.services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace angular.services
 {
     public class MovieService : IMovieService
     {
+        public readonly Context db;
+
+        public MovieService(Context ctx)
+        {
+            db = ctx;
+        }
+
         public IEnumerable<Movie> GetMovies()
         {
-            throw new NotImplementedException();
+            return db.Movies;
         }
 
         public IEnumerable<Movie> GetMoviesByDirectorId(long directorId)
