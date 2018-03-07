@@ -21,7 +21,7 @@ namespace angular.web.Controllers
     [HttpGet]
     public IEnumerable<Movie> Get() => movieService.GetMovies();
 
-    [HttpGet("{id}")]
+    [HttpGet("/{id}")]
     public Movie Get(long id) => movieService.GetMovie(id);
 
     [HttpGet("director={directorId}")]
@@ -30,10 +30,10 @@ namespace angular.web.Controllers
     [HttpPost]
     public HttpResponseMessage Post([FromBody]Movie value) => movieService.AddMovie(value);
 
-    [HttpPut("{id}")]
+    [HttpPut("/{id}")]
     public HttpResponseMessage Put([FromBody]Movie value) => movieService.UpdateMovie(value);
 
-    [HttpDelete("{id}")]
+    [HttpDelete("/{id}")]
     public HttpResponseMessage Delete(int id) => movieService.RemoveMovie(id);
   }
 }
