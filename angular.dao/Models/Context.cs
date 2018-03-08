@@ -9,14 +9,18 @@ namespace angular.dao.Models
 {
     public class Context : DbContext
     {
+        //For tests
+        public Context() : base(new DbContextOptions<Context>()) { }
+
         public Context(DbContextOptions<Context> options) : base(options)
         {
         }
 
-        public DbSet<Actor> Actors { get; set; }
-        public DbSet<Director> Directors { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
-        public DbSet<User> Users { get; set; }
+
+        public virtual DbSet<Actor> Actors { get; set; }
+        public virtual DbSet<Director> Directors { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Rating> Ratings { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
