@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 using angular.dao.Models;
 using angular.services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -21,19 +18,20 @@ namespace angular.web.Controllers
     [HttpGet]
     public IEnumerable<Movie> Get() => movieService.GetMovies();
 
-    [HttpGet("/{id}")]
+    [HttpGet("{id}")]
     public Movie Get(long id) => movieService.GetMovie(id);
 
-    [HttpGet("director={directorId}")]
-    public IEnumerable<Movie> GetByDirectorId(long directorId) => movieService.GetMoviesByDirectorId(directorId);
+    //TODO: fix url
+    [HttpGet("director={director}")]
+    public IEnumerable<Movie> GetByDirectorId(long director) => movieService.GetMoviesByDirectorId(director);
 
     [HttpPost]
     public HttpResponseMessage Post([FromBody]Movie value) => movieService.AddMovie(value);
 
-    [HttpPut("/{id}")]
+    [HttpPut("/movies/{id}")]
     public HttpResponseMessage Put([FromBody]Movie value) => movieService.UpdateMovie(value);
 
-    [HttpDelete("/{id}")]
+    [HttpDelete("/movies/{id}")]
     public HttpResponseMessage Delete(int id) => movieService.RemoveMovie(id);
   }
 }
