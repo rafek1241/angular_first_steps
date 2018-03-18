@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "angular.dao", "angular.dao\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FB05DC4C-4448-4CCB-9FBA-FA2C7D15C00E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angular.services.tests", "angular.services.tests\angular.services.tests.csproj", "{4E8BA002-A4D3-4432-BB68-0C0B5818859D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,16 +29,9 @@ Global
 		{E069D9FC-616F-458C-9432-0C68D274EE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E069D9FC-616F-458C-9432-0C68D274EE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E069D9FC-616F-458C-9432-0C68D274EE96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E8BA002-A4D3-4432-BB68-0C0B5818859D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E8BA002-A4D3-4432-BB68-0C0B5818859D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E8BA002-A4D3-4432-BB68-0C0B5818859D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E8BA002-A4D3-4432-BB68-0C0B5818859D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4E8BA002-A4D3-4432-BB68-0C0B5818859D} = {FB05DC4C-4448-4CCB-9FBA-FA2C7D15C00E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DE4788C-0539-4AD0-8F8A-837A63821F18}
