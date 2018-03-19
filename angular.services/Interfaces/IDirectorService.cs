@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using angular.dao.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace angular.services.Interfaces
 {
@@ -13,8 +9,8 @@ namespace angular.services.Interfaces
         IEnumerable<Director> GetDirectors();
         Director GetDirector(long directorId);
         Director GetDirectorByMovieId(long movieId);
-        HttpResponseMessage AddDirector(Director director);
-        HttpResponseMessage UpdateDirector(Director director);
-        HttpResponseMessage RemoveDirector(long directorId);
+        IActionResult AddDirector(Director director);
+        IActionResult UpdateDirector(Director director);
+        IActionResult RemoveDirector(long directorId);
     }
 }

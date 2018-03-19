@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using angular.dao.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace angular.services.Interfaces
 {
@@ -13,9 +9,9 @@ namespace angular.services.Interfaces
         IEnumerable<Movie> GetMovies();
         IEnumerable<Movie> GetMoviesByDirectorId(long directorId);
         Movie GetMovie(long movieId);
-        HttpResponseMessage AddMovie(Movie movie);
-        HttpResponseMessage UpdateMovie(Movie movie);
-        HttpResponseMessage RemoveMovie(long movieId);
+        IActionResult AddMovie(Movie movie);
+        IActionResult UpdateMovie(Movie movie);
+        IActionResult RemoveMovie(long movieId);
 
     }
 }
