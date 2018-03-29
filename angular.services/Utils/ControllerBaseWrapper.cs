@@ -10,9 +10,9 @@ namespace angular.services.Utils
     public abstract class ControllerBaseWrapper : ControllerBase
     {
         [NonAction]
-        public virtual CreatedResult Created(object model)
+        public virtual ObjectResult Created(object model)
         {
-            return (CreatedResult)new ObjectResult(model){StatusCode = 201};
+            return new ObjectResult(model){StatusCode = 201};
         }
     }
 }
