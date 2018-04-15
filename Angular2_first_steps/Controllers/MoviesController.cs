@@ -29,7 +29,7 @@ namespace angular.web.Controllers
     public IActionResult Post([FromBody]Movie value) => movieService.AddMovie(value);
 
     [HttpPut("/movies/{id}")]
-    public IActionResult Put([FromBody]Movie value) => movieService.UpdateMovie(value);
+    public IActionResult Put(int id, [FromBody]Movie value) => movieService.UpdateMovie(id,value);
 
     [HttpDelete("/movies/{id}")]
     public IActionResult Delete(int id) => movieService.RemoveMovie(id);
