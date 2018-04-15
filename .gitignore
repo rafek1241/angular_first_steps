@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Angular2_first_steps/wwwroot
 /Angular2_first_steps/bower_components
+/Angular2_first_steps/src/assets
