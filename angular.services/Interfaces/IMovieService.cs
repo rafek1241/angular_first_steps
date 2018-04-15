@@ -10,7 +10,7 @@ namespace angular.services.Interfaces
         IEnumerable<Movie> GetMoviesByDirectorId(long directorId);
         Movie GetMovie(long movieId);
         IActionResult AddMovie(Movie movie);
-        IActionResult UpdateMovie(Movie movie);
+        IActionResult UpdateMovie(long movieId, Movie movie);
         IActionResult RemoveMovie(long movieId);
 
     }

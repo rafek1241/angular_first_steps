@@ -7,9 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="nunit" Version="3.9.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="FluentAssertions" Version="5.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.2" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\angular.dao\angular.dao.csproj" />
+    <ProjectReference Include="..\angular.services\angular.services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

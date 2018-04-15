@@ -23,12 +23,12 @@ namespace angular.web.Controllers
     public Director GetByMovieId(long id) => directorService.GetDirectorByMovieId(id);
 
     [HttpPost]
-    public HttpResponseMessage Post([FromBody]Director value) => directorService.AddDirector(value);
+    public IActionResult Post([FromBody]Director value) => directorService.AddDirector(value);
 
     [HttpPut("{id}")]
-    public HttpResponseMessage Put([FromBody]Director value) => directorService.UpdateDirector(value);
+    public IActionResult Put(long id, [FromBody]Director value) => directorService.UpdateDirector(id, value);
 
     [HttpDelete("{id}")]
-    public HttpResponseMessage Delete(long id) => directorService.RemoveDirector(id);
+    public IActionResult Delete(long id) => directorService.RemoveDirector(id);
   }
 }

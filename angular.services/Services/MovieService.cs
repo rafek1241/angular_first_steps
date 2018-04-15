@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using angular.dao.Models;
 using angular.services.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using angular.services.Utils;
 
 namespace angular.services
 {
-    public class MovieService : IMovieService
+    public class MovieService : ControllerBaseWrapper, IMovieService
     {
-        public readonly Context db;
+        private readonly Context db;
 
         public MovieService(Context ctx)
         {
@@ -21,12 +19,12 @@ namespace angular.services
 
         public IEnumerable<Movie> GetMovies()
         {
-            return db.Movies;
+            return db.Movies.AsEnumerable();
         }
 
         public IEnumerable<Movie> GetMoviesByDirectorId(long directorId)
         {
-            throw new NotImplementedException();
+            return db.Movies.Where(p => p.Director != null).Where(p => p.Director.DirectorId == directorId);
         }
 
         public Movie GetMovie(long movieId)
@@ -34,17 +32,18 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage AddMovie(Movie movie)
+        public IActionResult AddMovie(Movie movie)
+        {
+            var a = Created(movie);
+            throw new NotImplementedException();
+        }
+
+        public IActionResult UpdateMovie(long movieId, Movie movie)
         {
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage UpdateMovie(Movie movie)
-        {
-            throw new NotImplementedException();
-        }
-
-        public HttpResponseMessage RemoveMovie(long movieId)
+        public IActionResult RemoveMovie(long movieId)
         {
             throw new NotImplementedException();
         }

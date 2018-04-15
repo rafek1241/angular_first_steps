@@ -26,12 +26,12 @@ namespace angular.web.Controllers
     public IEnumerable<Movie> GetByDirectorId(long director) => movieService.GetMoviesByDirectorId(director);
 
     [HttpPost]
-    public HttpResponseMessage Post([FromBody]Movie value) => movieService.AddMovie(value);
+    public IActionResult Post([FromBody]Movie value) => movieService.AddMovie(value);
 
     [HttpPut("/movies/{id}")]
-    public HttpResponseMessage Put([FromBody]Movie value) => movieService.UpdateMovie(value);
+    public IActionResult Put([FromBody]Movie value) => movieService.UpdateMovie(value);
 
     [HttpDelete("/movies/{id}")]
-    public HttpResponseMessage Delete(int id) => movieService.RemoveMovie(id);
+    public IActionResult Delete(int id) => movieService.RemoveMovie(id);
   }
 }

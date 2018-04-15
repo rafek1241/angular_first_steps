@@ -10,7 +10,7 @@ namespace angular.services.Interfaces
         Director GetDirector(long directorId);
         Director GetDirectorByMovieId(long movieId);
         IActionResult AddDirector(Director director);
-        IActionResult UpdateDirector(Director director);
+        IActionResult UpdateDirector(long directorId, Director director);
         IActionResult RemoveDirector(long directorId);
     }
 }

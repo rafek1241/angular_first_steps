@@ -1,15 +1,13 @@
 ﻿using angular.services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using angular.dao.Models;
+using angular.services.Utils;
+using Microsoft.AspNetCore.Mvc;
 
 namespace angular.services
 {
-    public class DirectorService : IDirectorService
+    public class DirectorService : ControllerBaseWrapper, IDirectorService
     {
         public IEnumerable<Director> GetDirectors()
         {
@@ -26,17 +24,17 @@ namespace angular.services
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage AddDirector(Director director)
+        public IActionResult AddDirector(Director director)
         {
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage UpdateDirector(Director director)
+        public IActionResult UpdateDirector(long directorId, Director director)
         {
             throw new NotImplementedException();
         }
 
-        public HttpResponseMessage RemoveDirector(long directorId)
+        public IActionResult RemoveDirector(long directorId)
         {
             throw new NotImplementedException();
         }
